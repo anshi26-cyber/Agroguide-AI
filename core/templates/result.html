@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="px-6 md:px-10 py-16 bg-gradient-to-br from-gray-900 to-black text-white">
+
+    <!-- TITLE -->
+    <h1 class="text-4xl md:text-5xl font-bold text-center mb-10 tracking-wide">
+        🌾 Smart Crop Recommendation
+    </h1>
+
+    <!-- WEATHER CARD -->
+    <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-xl rounded-3xl p-8 shadow-xl border border-white/10 mb-12">
+
+        <h2 class="text-2xl font-semibold mb-4 text-center">
+            📍 {{ city }}
+        </h2>
+
+        <!-- Weather Type -->
+        <div class="text-center mb-6">
+
+            <p class="text-gray-400">
+                Current Condition
+            </p>
+
+            {% if temp > 35 %}
+                <h3 class="text-yellow-400 text-lg">
+                    ☀️ Hot Weather
+                </h3>
+
+            {% elif temp > 20 %}
+                <h3 class="text-green-400 text-lg">
+                    🌤 Pleasant Weather
+                </h3>
+
+            {% else %}
+                <h3 class="text-blue-400 text-lg">
+                    ❄️ Cold Weather
+                </h3>
+
+            {% endif %}
+
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+            <!-- Temperature -->
+            <div class="text-center">
+
+                <p class="text-gray-400">
+                    Temperature
+                </p>
+
+                <h1 class="text-5xl font-bold text-yellow-400">
+                    {{ temp }}°C
+                </h1>
+
+            </div>
+
+            <!-- Divider -->
+            <div class="hidden md:block h-16 w-px bg-gray-600"></div>
+
+            <!-- Humidity -->
+            <div class="text-center">
+
+                <p class="text-gray-400">
+                    Humidity
+                </p>
+
+                <h1 class="text-5xl font-bold text-blue-400">
+                    {{ humidity }}%
+                </h1>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RECOMMENDED CROP -->
+    <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-xl rounded-3xl p-8 shadow-xl border border-white/10">
+
+        <h2 class="text-3xl font-bold text-center mb-10">
+            🌱 Recommended Crop
+        </h2>
+        <div class="mt-8 text-center">
+            <h2 class="text-2xl font-bold text-green-400">
+            🌾 Expected Yield
+            </h2>
+            <p class="text-4xl font-bold text-yellow-400 mt-4">
+        {{ predicted_yield }} ton/hectare </p>
+    </div>
+
+    <div class="mt-6 text-center">
+        <h2 class="text-2xl font-bold text-green-400">
+            💰 Market Price
+        </h2>
+        <p class="text-4xl font-bold text-yellow-400 mt-4">
+            ₹ {{ price }} 
+        </p>
+        <p class="text-gray-300 mt-2">
+        {{ market }}, {{ market_state }}
+        </p>
+    
+    </div>
+
+        <div class="text-center">
+
+            <h1 class="text-6xl font-bold text-green-400 mb-10">
+                🌾 {{ crop }}
+            </h1>
+
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="text-center">
+                <p class="text-gray-400">🌡 Temperature</p>
+                <h3 class="text-2xl font-bold">
+                    {{ temp }} °C
+                </h3>
+            </div>
+
+            <div class="text-center">
+                <p class="text-gray-400">💧 Humidity</p>
+                <h3 class="text-2xl font-bold">
+                    {{ humidity }} %
+                </h3>
+            </div>
+
+            <div class="text-center">
+                <p class="text-gray-400">🌧 Rainfall</p>
+                <h3 class="text-2xl font-bold">
+                    {{ rainfall }} mm
+                </h3>
+            </div>
+
+            <div class="text-center">
+                <p class="text-gray-400">🌱 Soil Type</p>
+                <h3 class="text-2xl font-bold">
+                    {{ soil }}
+                </h3>
+            </div>
+
+            <div class="text-center">
+                <p class="text-gray-400">🌾 Season</p>
+                <h3 class="text-2xl font-bold">
+                    {{ season }}
+                </h3>
+            </div>
+
+            <div class="text-center">
+                <p class="text-gray-400">💦 Irrigation</p>
+                <h3 class="text-2xl font-bold">
+                    {{ irrigation }}
+                </h3>
+            </div>
+
+            <div class="text-center">
+                <p class="text-gray-400">📍 State</p>
+                <h3 class="text-2xl font-bold">
+                    {{ state }}
+                </h3>
+            </div>
+
+            <div class="text-center">
+                <p class="text-gray-400">🏙 District</p>
+                <h3 class="text-2xl font-bold">
+                    {{ district }}
+                </h3>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- INFO -->
+    <div class="mt-12 text-center max-w-2xl mx-auto">
+
+        <p class="text-gray-400">
+            This recommendation is generated using machine learning and real-time weather data.
+        </p>
+
+    </div>
+
+    <!-- BUTTON -->
+    <div class="flex justify-center mt-10">
+
+        <a href="{% url 'predict' %}">
+            <button class="bg-green-500 px-8 py-3 rounded-xl hover:scale-110 transition shadow-lg">
+                🔁 Predict Again
+            </button>
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

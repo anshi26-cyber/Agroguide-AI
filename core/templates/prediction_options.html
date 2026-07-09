@@ -1,0 +1,240 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <!-- Heading -->
+    <h1 class="title">
+        Choose Prediction Type
+    </h1>
+
+    <p class="subtitle">
+        Select an AI-powered prediction system for smarter farming decisions
+    </p>
+
+    <!-- Cards -->
+    <div class="cards">
+
+        <!-- Weather Prediction -->
+        <div class="card">
+
+            <div class="icon">🌦️</div>
+
+            <h2>Weather Based Crop Prediction</h2>
+
+            <p>
+                Get intelligent crop recommendations
+                according to real-time weather conditions.
+            </p>
+
+            <a href="{% url 'predict' %}">
+                <button>
+                    Open
+                </button>
+            </a>
+
+        </div>
+
+        <!-- Disease Prediction -->
+        <div class="card">
+
+            <div class="icon">🌱</div>
+
+            <h2>Disease Prediction</h2>
+
+            <p>
+                Upload plant leaf image and
+                detect diseases using AI-powered analysis.
+            </p>
+
+            <a href="{% url 'disease' %}">
+                <button>
+                    Open
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+
+/* Main Container */
+.container{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#07152b,#0f172a,#111827);
+    position:relative;
+    overflow:hidden;
+    padding:50px 20px;
+}
+
+/* Background Glow Effects */
+.container::before{
+    content:'';
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:rgba(34,197,94,0.18);
+    border-radius:50%;
+    top:-100px;
+    left:-100px;
+    filter:blur(120px);
+}
+
+.container::after{
+    content:'';
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:rgba(59,130,246,0.18);
+    border-radius:50%;
+    bottom:-100px;
+    right:-100px;
+    filter:blur(120px);
+}
+
+/* Title */
+.title{
+    color:white;
+    margin-bottom:10px;
+    font-size:48px;
+    font-weight:800;
+    text-align:center;
+    z-index:2;
+    text-shadow:0 0 20px rgba(34,197,94,0.25);
+}
+
+/* Subtitle */
+.subtitle{
+    color:#94a3b8;
+    font-size:18px;
+    margin-bottom:50px;
+    text-align:center;
+    max-width:650px;
+    z-index:2;
+    line-height:1.7;
+}
+
+/* Cards Container */
+.cards{
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+    justify-content:center;
+    z-index:2;
+}
+
+/* Card Design */
+.card{
+    background:rgba(28,35,51,0.75);
+    backdrop-filter:blur(20px);
+    width:360px;
+    padding:35px;
+    border-radius:30px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 12px 35px rgba(0,0,0,0.4);
+    transition:all 0.4s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Top Gradient Line */
+.card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:linear-gradient(to right,#22c55e,#3b82f6);
+}
+
+/* Hover Effect */
+.card:hover{
+    transform:translateY(-12px) scale(1.03);
+    border:1px solid rgba(34,197,94,0.3);
+    box-shadow:0 20px 45px rgba(34,197,94,0.15);
+}
+
+/* Icon */
+.icon{
+    font-size:55px;
+    margin-bottom:18px;
+    transition:0.3s ease;
+}
+
+.card:hover .icon{
+    transform:scale(1.15);
+}
+
+/* Card Heading */
+.card h2{
+    color:white;
+    font-size:28px;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+/* Paragraph */
+.card p{
+    color:#cbd5e1;
+    margin:20px 0;
+    line-height:1.8;
+    font-size:16px;
+}
+
+/* Button */
+button{
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+    color:white;
+    border:none;
+    padding:14px 35px;
+    border-radius:14px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:600;
+    transition:all 0.3s ease;
+    box-shadow:0 8px 20px rgba(34,197,94,0.25);
+}
+
+/* Button Hover */
+button:hover{
+    transform:scale(1.08);
+    background:linear-gradient(135deg,#16a34a,#15803d);
+    box-shadow:0 12px 30px rgba(34,197,94,0.35);
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    .title{
+        font-size:36px;
+    }
+
+    .subtitle{
+        font-size:16px;
+        margin-bottom:35px;
+    }
+
+    .cards{
+        gap:25px;
+    }
+
+    .card{
+        width:100%;
+        max-width:350px;
+    }
+
+}
+
+</style>
+
+{% endblock %}

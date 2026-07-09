@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="disease-container">
+
+    <div class="disease-card">
+
+        <h1>🌱 Plant Disease Detection</h1>
+
+        <p class="subtitle">
+            Upload a plant leaf image to detect disease instantly using AI
+        </p>
+
+        <form method="POST"
+              enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <div class="upload-box">
+                <input type="file"
+                       name="image"
+                       required>
+            </div>
+
+            <button type="submit"
+                    class="detect-btn">
+                🔍 Detect Disease
+            </button>
+
+        </form>
+
+        {% if image_url %}
+        <div class="image-preview">
+            <h3>Uploaded Leaf</h3>
+
+            <img src="{{ image_url }}"
+                 alt="Uploaded Image">
+        </div>
+        {% endif %}
+
+        {% if result %}
+        <div class="result-box">
+
+            <h2>🩺 Disease Detected</h2>
+
+            <div class="disease-name">
+                {{ result }}
+            </div>
+            <p style="color:#22c55e;
+            font-size:18px;
+            margin-top:10px;">
+            
+            Confidence:
+            {{ confidence }}%
+        </p>
+        {% if healthy %}
+        <div style="background:#14532d; color:#86efac; padding:15px; border-radius:15px; margin-top:20px; font-size:18px; font-weight:bold;">
+             Plant is Healthy 🌿
+        </div>
+        {% endif %}
+
+            <div class="solution-box" style="margin-top:20px;">
+
+                <h3>💡 Recommended Solution</h3>
+
+                <p>{{ solution }}</p>
+
+                <h3>🌾 Farmer Tips</h3>
+
+                <ul style="
+                    color:white;
+                    text-align:left;
+                    line-height:2;
+                    margin-top:10px;
+                    font-size:16px;
+                  ">
+                    {% for tip in tips %}
+                    <li>• {{ tip }}</li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+
+        </div>
+        {% endif %}
+
+        <a href="{% url 'prediction_options' %}"
+           class="block mt-10 text-green-400 hover:underline">
+            ⬅ Back to Prediction
+        </a>
+    </div>
+
+</div>
+
+<style>
+
+.disease-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        to right,
+        #06152d,
+        #0a1931
+    );
+    padding:40px 20px;
+}
+
+.disease-card{
+    width:100%;
+    max-width:700px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border-radius:30px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 0 25px rgba(0,0,0,0.4);
+}
+
+.disease-card h1{
+    color:#fff;
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#cbd5e1;
+    margin-bottom:30px;
+    font-size:18px;
+}
+
+.upload-box{
+    background:#1e293b;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+input[type="file"]{
+    color:white;
+    font-size:16px;
+}
+
+.detect-btn{
+    background:#22c55e;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:15px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.detect-btn:hover{
+    background:#16a34a;
+    transform:scale(1.05);
+}
+
+.image-preview{
+    margin-top:35px;
+}
+
+.image-preview h3{
+    color:white;
+    margin-bottom:15px;
+}
+
+.image-preview img{
+    width:300px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.result-box{
+    margin-top:35px;
+    background:#0f172a;
+    padding:30px;
+    border-radius:25px;
+}
+
+.result-box h2{
+    color:#22c55e;
+    margin-bottom:20px;
+}
+
+.disease-name{
+    font-size:28px;
+    font-weight:bold;
+    color:white;
+    margin-bottom:25px;
+}
+
+.solution-box{
+    background:#1e293b;
+    padding:20px;
+    border-radius:20px;
+}
+
+.solution-box h3{
+    color:#22c55e;
+    margin-bottom:10px;
+}
+
+.solution-box p{
+    color:#e2e8f0;
+    font-size:17px;
+}
+
+</style>
+
+{% endblock %}

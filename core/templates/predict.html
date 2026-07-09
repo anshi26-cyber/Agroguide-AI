@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="flex justify-center items-center min-h-[90vh] px-4 bg-gradient-to-br from-gray-900 to-black text-white">
+
+    <div class="bg-white/10 backdrop-blur-xl p-10 rounded-3xl shadow-2xl w-full max-w-md border border-white/10">
+
+        <h2 class="text-3xl font-bold text-center mb-6">
+            🌾 Smart Crop Recommendation
+        </h2>
+
+        <p class="text-center text-gray-400 mb-6">
+            Enter your details to get suitable crop recommendations
+        </p>
+
+        <!-- Error -->
+        {% if error %}
+        <p class="text-red-400 text-center mb-4">
+            {{ error }}
+        </p>
+        {% endif %}
+
+        <form method="POST" class="space-y-5">
+            {% csrf_token %}
+
+            <!-- City -->
+            <div>
+                <label class="block mb-2 text-gray-300">
+                    City
+                </label>
+
+                <input
+                    type="text"
+                    name="city"
+                    placeholder="e.g. Muzaffarpur"
+                    required
+                    class="w-full p-3 rounded-xl bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400">
+            </div>
+
+            <!-- State -->
+            <div>
+                <label class="block mb-2 text-gray-300">
+                    State
+                </label>
+
+                <input
+                    type="text"
+                    name="state"
+                    placeholder="e.g. Bihar"
+                    required
+                    class="w-full p-3 rounded-xl bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400">
+            </div>
+
+            <!-- District -->
+            <div>
+                <label class="block mb-2 text-gray-300">
+                    District
+                </label>
+
+                <input
+                    type="text"
+                    name="district"
+                    placeholder="e.g. Muzaffarpur"
+                    required
+                    class="w-full p-3 rounded-xl bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400">
+            </div>
+
+            <!-- Season -->
+            <div>
+                <label class="block mb-2 text-gray-300">
+                    Season
+                </label>
+
+                <select
+                    name="season"
+                    class="w-full p-3 rounded-xl bg-gray-800 border border-gray-600">
+
+                    <option value="Kharif">Kharif</option>
+                    <option value="Rabi">Rabi</option>
+                    <option value="Zaid">Zaid</option>
+
+                </select>
+            </div>
+
+            <!-- Soil Type -->
+            <div>
+                <label class="block mb-2 text-gray-300">
+                    Soil Type
+                </label>
+
+                <select
+                    name="soil"
+                    class="w-full p-3 rounded-xl bg-gray-800 border border-gray-600">
+
+                    <option value="Alluvial">Alluvial</option>
+                    <option value="Black">Black</option>
+                    <option value="Red">Red</option>
+                    <option value="Laterite">Laterite</option>
+                    <option value="Mountain">Mountain</option>
+                    <option value="Desert">Desert</option>
+
+                </select>
+            </div>
+
+            <!-- Irrigation -->
+            <div>
+                <label class="block mb-2 text-gray-300">
+                    Irrigation Available
+                </label>
+
+                <select
+                    name="irrigation"
+                    class="w-full p-3 rounded-xl bg-gray-800 border border-gray-600">
+
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+
+                </select>
+            </div>
+
+            <!-- Button -->
+            <button
+                type="submit"
+                class="w-full bg-green-500 py-3 rounded-xl hover:scale-105 transition shadow-lg">
+
+                🔍 Predict Crop
+
+            </button>
+
+        </form>
+
+        <a href="{% url 'prediction_options' %}"
+           class="block mt-10 text-green-400 hover:underline">
+
+            ⬅ Back to Prediction
+
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

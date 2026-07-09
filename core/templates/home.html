@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="relative overflow-hidden flex flex-col md:flex-row items-center justify-between px-10 py-24">
+
+    <!-- Background Blur -->
+    <div class="absolute top-0 left-0 w-72 h-72 bg-green-200 opacity-20 blur-3xl rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-green-300 opacity-20 blur-3xl rounded-full"></div>
+
+    <!-- Left Content -->
+    <div class="max-w-xl space-y-6 z-10">
+        <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">
+            🌱 AI Powered Agriculture
+        </span>
+
+        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+            Smart Farming with
+            <span class="text-green-500 drop-shadow-md">AI</span>
+        </h1>
+
+        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            AI-powered crop recommendations using soil analysis and 
+            real-time weather data.
+        </p>
+
+        <div class="flex flex-wrap gap-4 pt-2">
+            <a href="{% url 'prediction_options' %}">
+                <button class="bg-green-500 text-white px-8 py-3 rounded-xl shadow-lg hover:shadow-green-300 hover:scale-105 transition duration-300 btn-hover">
+                    🚀 Start Prediction
+                </button>
+            </a>
+
+            <a href="{% url 'about' %}">
+                <button class="border border-gray-400 px-8 py-3 rounded-xl hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-300 shadow-sm">
+                    Explore
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="relative z-10 mt-10 md:mt-0">
+        <div class="absolute inset-0 bg-gradient-to-r from-green-400/30 to-transparent rounded-3xl blur-2xl"></div>
+
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef"
+            class="hero-img w-[550px] h-[380px] object-cover rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 hover:scale-105 transition duration-500">
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="px-10 py-20 bg-gradient-to-b from-transparent to-green-50 dark:to-gray-900">
+
+    <div class="text-center mb-14">
+        <h2 class="text-4xl font-bold">
+            Why <span class="text-green-500">AgroGuide?</span>
+        </h2>
+        <p class="text-gray-500 dark:text-gray-400 mt-3">
+            Powerful AI features to make farming smarter and more productive.
+        </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <div class="glass p-8 rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700 hover:-translate-y-2 hover:shadow-2xl transition duration-300">
+            <div class="text-5xl mb-4">🌱</div>
+            <h3 class="text-2xl font-semibold mb-3">Crop Intelligence</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                Get smart crop suggestions based on soil & weather.
+            </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass p-8 rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700 hover:-translate-y-2 hover:shadow-2xl transition duration-300">
+            <div class="text-5xl mb-4">🌦️</div>
+            <h3 class="text-2xl font-semibold mb-3">Weather Insights</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                Stay updated with real-time weather information.
+            </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass p-8 rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700 hover:-translate-y-2 hover:shadow-2xl transition duration-300">
+            <div class="text-5xl mb-4">🤖</div>
+            <h3 class="text-2xl font-semibold mb-3">AI Engine</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                ML-powered predictions for better farming decisions.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="relative text-center py-24 overflow-hidden">
+
+    <!-- Background Glow -->
+    <div class="absolute inset-0 bg-gradient-to-r from-green-100 via-transparent to-green-100 dark:from-gray-800 dark:to-gray-800 opacity-50"></div>
+
+    <div class="relative z-10">
+        <h2 class="text-4xl font-bold mb-5">
+            Start Your Smart Farming Journey
+        </h2>
+
+        <p class="text-gray-500 dark:text-gray-400 mb-8 max-w-xl mx-auto">
+            Join the future of agriculture with AI-driven crop recommendations and weather insights.
+        </p>
+
+        <a href="{% url 'prediction_options' %}">
+            <button class="bg-green-500 text-white px-10 py-4 rounded-2xl text-lg font-semibold shadow-xl hover:scale-110 hover:shadow-green-300 transition duration-300 btn-hover">
+                🌾 Get Started
+            </button>
+        </a>
+    </div>
+
+</section>
+
+{% endblock %}

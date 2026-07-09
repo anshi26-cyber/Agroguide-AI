@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="relative text-center py-24 bg-gray-900 text-white overflow-hidden">
+
+    <!-- Background Glow -->
+    <div class="absolute top-0 left-0 w-72 h-72 bg-green-500/20 blur-[120px] rounded-full"></div>
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-emerald-400/20 blur-[120px] rounded-full"></div>
+
+    <div class="relative z-10">
+        <span class="bg-green-500/20 text-green-400 px-4 py-2 rounded-full text-sm border border-green-500/30">
+            🌱 Smart Farming with AI
+        </span>
+
+        <h1 class="text-5xl font-extrabold mt-6 mb-4">
+            AgroGuide Features
+        </h1>
+
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+            Discover powerful AI-driven tools designed to help farmers 
+            make smarter decisions with crop recommendations, weather 
+            updates, and intelligent predictions.
+        </p>
+    </div>
+
+</section>
+
+<!-- FEATURE CARDS -->
+<section class="bg-gray-900 text-white px-10 py-20">
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <div class="group bg-white/10 p-8 rounded-3xl backdrop-blur-lg border border-white/10 
+        hover:border-green-400/40 hover:-translate-y-2 transition duration-300 shadow-lg">
+
+            <div class="text-5xl mb-5 group-hover:scale-110 transition">
+                🌱
+            </div>
+
+            <h3 class="text-2xl font-semibold">
+                Crop Recommendation
+            </h3>
+
+            <p class="text-gray-300 mt-3 leading-relaxed">
+                Get the best crop suggestions based on 
+                soil nutrients and weather conditions.
+            </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group bg-white/10 p-8 rounded-3xl backdrop-blur-lg border border-white/10 
+        hover:border-blue-400/40 hover:-translate-y-2 transition duration-300 shadow-lg">
+
+            <div class="text-5xl mb-5 group-hover:scale-110 transition">
+                🌦️
+            </div>
+
+            <h3 class="text-2xl font-semibold">
+                Weather Insights
+            </h3>
+
+            <p class="text-gray-300 mt-3 leading-relaxed">
+                Stay informed with real-time weather updates 
+                to plan your farming activities better.
+            </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group bg-white/10 p-8 rounded-3xl backdrop-blur-lg border border-white/10 
+        hover:border-purple-400/40 hover:-translate-y-2 transition duration-300 shadow-lg">
+
+            <div class="text-5xl mb-5 group-hover:scale-110 transition">
+                🤖
+            </div>
+
+            <h3 class="text-2xl font-semibold">
+                AI Prediction
+            </h3>
+
+            <p class="text-gray-300 mt-3 leading-relaxed">
+                Machine learning based smart analysis 
+                for accurate agricultural recommendations.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATS SECTION -->
+<section class="bg-gradient-to-b from-gray-900 to-gray-800 text-white py-20">
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center px-10">
+
+        <div>
+            <h2 class="text-4xl font-bold text-green-400">95%</h2>
+            <p class="text-gray-400 mt-2">Prediction Accuracy</p>
+        </div>
+
+        <div>
+            <h2 class="text-4xl font-bold text-green-400">24/7</h2>
+            <p class="text-gray-400 mt-2">Weather Updates</p>
+        </div>
+
+        <div>
+            <h2 class="text-4xl font-bold text-green-400">AI</h2>
+            <p class="text-gray-400 mt-2">Smart Analysis</p>
+        </div>
+
+        <div>
+            <h2 class="text-4xl font-bold text-green-400">100+</h2>
+            <p class="text-gray-400 mt-2">Crop Suggestions</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA SECTION -->
+<section class="relative bg-gray-900 text-center py-24 overflow-hidden">
+
+    <div class="absolute inset-0 bg-gradient-to-r from-green-500/10 via-transparent to-emerald-500/10"></div>
+
+    <div class="relative z-10">
+        <h2 class="text-4xl font-bold text-white mb-5">
+            Ready to Transform Farming?
+        </h2>
+
+        <p class="text-gray-400 mb-8 max-w-xl mx-auto">
+            Experience smarter farming with AI-powered crop 
+            recommendations and real-time weather insights.
+        </p>
+
+        <a href="{% url 'register' %}">
+            <button class="bg-green-500 hover:bg-green-600 text-white 
+            px-8 py-4 rounded-2xl font-semibold shadow-xl 
+            hover:scale-105 transition duration-300">
+
+            🚀 Get Started
+        </button>
+        </a>
+    </div>
+
+</section>
+
+{% endblock %}

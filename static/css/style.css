@@ -1,0 +1,17 @@
+/* Glass effect */
+.glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+}
+
+/* Button hover */
+.btn-hover:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/* Image shadow */
+.hero-img {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}

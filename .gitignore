@@ -1,0 +1,10 @@
+core/ml/yield_model.pkl
+plant_disease_dataset/
+core/ml/*.pkl
+*.h5
+*.keras
+__pycache__/
+*.pyc
+media/
+.vscode/
+db.sqlite3
