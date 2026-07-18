@@ -1,200 +1,777 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
 {% block content %}
 
-<!-- HERO SECTION -->
-<section class="relative overflow-hidden text-center px-10 py-28 bg-gray-950 text-white">
+<!-- ================= HERO SECTION ================= -->
 
-    <!-- Background Glow -->
-    <div class="absolute top-0 left-0 w-96 h-96 bg-green-500/20 rounded-full blur-[120px]"></div>
-    <div class="absolute bottom-0 right-0 w-96 h-96 bg-emerald-400/20 rounded-full blur-[120px]"></div>
+<section class="about-hero">
 
-    <div class="relative z-10">
+    <div class="hero-bg hero-left"></div>
+    <div class="hero-bg hero-right"></div>
 
-        <span class="bg-green-500/20 border border-green-400/30 
-        text-green-400 px-5 py-2 rounded-full text-sm font-medium">
-            🌱 Smart Agriculture Powered by AI
+    <div class="container">
+
+        <span class="hero-badge">
+            🌱 Smart Agriculture Powered by Artificial Intelligence
         </span>
 
-        <h1 class="text-5xl md:text-6xl font-extrabold mt-8 mb-6">
-            About <span class="text-green-400">AgroGuide</span>
+        <h1 class="hero-title">
+
+            About
+
+            <span>AgroGuide AI</span>
+
         </h1>
 
-        <p class="text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed">
-            AgroGuide is an AI-powered smart farming platform designed to 
-            help farmers make better agricultural decisions. By combining 
-            soil analysis, weather intelligence, and machine learning, 
-            we deliver accurate crop recommendations to improve productivity 
-            and sustainability.
+        <p class="hero-text">
+
+            AgroGuide AI is an intelligent farming platform that combines
+            Artificial Intelligence, Weather Intelligence, Soil Analysis
+            and Machine Learning to help farmers make smarter decisions,
+            improve productivity and promote sustainable agriculture.
+
         </p>
 
     </div>
+
 </section>
 
-<!-- MISSION / VISION / TECHNOLOGY -->
-<section class="bg-gray-950 text-white px-10 py-20">
+<!-- ================= OUR STORY ================= -->
 
-    <div class="grid md:grid-cols-3 gap-8">
+<section class="about-section">
 
-        <!-- Mission -->
-        <div class="group bg-white/10 border border-white/10 
-        p-8 rounded-3xl backdrop-blur-lg shadow-lg 
-        hover:-translate-y-3 hover:border-green-400/40 
-        transition duration-300">
+    <div class="container">
 
-            <div class="text-5xl mb-5 group-hover:scale-110 transition">
-                🌱
-            </div>
+        <div class="section-title">
 
-            <h3 class="text-2xl font-semibold mb-3">
-                Our Mission
-            </h3>
+            <span class="section-tag">
+                OUR STORY
+            </span>
 
-            <p class="text-gray-300 leading-relaxed">
-                Empower farmers with intelligent AI-driven insights 
-                for smarter crop planning and better productivity.
-            </p>
+            <h2>
+
+                Why We Built
+
+                <span>AgroGuide AI</span>
+
+            </h2>
+
         </div>
 
-        <!-- Vision -->
-        <div class="group bg-white/10 border border-white/10 
-        p-8 rounded-3xl backdrop-blur-lg shadow-lg 
-        hover:-translate-y-3 hover:border-blue-400/40 
-        transition duration-300">
+        <div class="story-grid">
 
-            <div class="text-5xl mb-5 group-hover:scale-110 transition">
-                🚀
+            <div class="story-image">
+
+                <div class="story-icon">
+                    🌍
+                </div>
+
             </div>
 
-            <h3 class="text-2xl font-semibold mb-3">
-                Our Vision
-            </h3>
+            <div class="story-content">
 
-            <p class="text-gray-300 leading-relaxed">
-                Create a future where technology and agriculture 
-                work together for sustainable smart farming.
-            </p>
-        </div>
+                <h3>
+                    Making Farming Smarter with AI
+                </h3>
 
-        <!-- Technology -->
-        <div class="group bg-white/10 border border-white/10 
-        p-8 rounded-3xl backdrop-blur-lg shadow-lg 
-        hover:-translate-y-3 hover:border-purple-400/40 
-        transition duration-300">
+                <p>
 
-            <div class="text-5xl mb-5 group-hover:scale-110 transition">
-                🤖
+                    Agriculture is the backbone of our economy, yet many
+                    farmers still struggle with unpredictable weather,
+                    improper crop selection, soil quality issues and plant
+                    diseases.
+
+                </p>
+
+                <p>
+
+                    AgroGuide AI was created to bridge the gap between
+                    modern Artificial Intelligence and traditional farming.
+                    Our platform provides intelligent recommendations using
+                    weather forecasting, soil analysis and machine learning
+                    models.
+
+                </p>
+
+                <p>
+
+                    Our goal is to empower every farmer with easy-to-use,
+                    accurate and technology-driven agricultural solutions.
+
+                </p>
+
             </div>
 
-            <h3 class="text-2xl font-semibold mb-3">
-                Technology
-            </h3>
-
-            <p class="text-gray-300 leading-relaxed">
-                Built using Artificial Intelligence, Machine Learning,
-                Soil Analysis, and Real-time Weather APIs.
-            </p>
         </div>
 
     </div>
 
 </section>
 
-<!-- WHY CHOOSE US -->
-<section class="bg-gradient-to-b from-gray-950 to-gray-900 text-white py-24 px-10">
+<!-- ================= MISSION VISION ================= -->
 
-    <div class="text-center mb-14">
-        <h2 class="text-4xl font-bold">
-            Why Choose <span class="text-green-400">AgroGuide?</span>
+<section class="about-section dark-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="section-tag">
+
+                OUR VALUES
+
+            </span>
+
+            <h2>
+
+                Mission • Vision • Technology
+
+            </h2>
+
+        </div>
+
+        <div class="cards-grid">
+
+            <!-- Mission -->
+
+            <div class="about-card">
+
+                <div class="card-icon">
+                    🌱
+                </div>
+
+                <h3>
+
+                    Our Mission
+
+                </h3>
+
+                <p>
+
+                    Empower farmers with intelligent AI-powered solutions
+                    that improve crop productivity, reduce farming risks
+                    and support sustainable agriculture.
+
+                </p>
+
+            </div>
+
+            <!-- Vision -->
+
+            <div class="about-card">
+
+                <div class="card-icon">
+                    🚀
+                </div>
+
+                <h3>
+
+                    Our Vision
+
+                </h3>
+
+                <p>
+
+                    To become a trusted smart agriculture platform that
+                    connects technology with farmers and builds the future
+                    of digital farming.
+
+                </p>
+
+            </div>
+
+            <!-- Technology -->
+
+            <div class="about-card">
+
+                <div class="card-icon">
+                    🤖
+                </div>
+
+                <h3>
+
+                    Technology
+
+                </h3>
+
+                <p>
+
+                    AgroGuide AI is powered by Python, Django,
+                    Machine Learning, Weather APIs and Soil Analysis
+                    to deliver fast, intelligent and reliable farming
+                    recommendations.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= WHAT AGROGUIDE DOES ================= -->
+
+<section class="about-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="section-tag">
+                FEATURES
+            </span>
+
+            <h2>
+
+                What Can
+
+                <span>AgroGuide AI</span>
+
+                Do?
+
+            </h2>
+
+            <p>
+
+                Our platform provides intelligent agricultural tools that
+                help farmers make faster, smarter and more accurate decisions.
+
+            </p>
+
+        </div>
+
+        <div class="cards-grid">
+
+            <div class="feature-card">
+
+                <div class="card-icon">🌾</div>
+
+                <h3>Crop Recommendation</h3>
+
+                <p>
+
+                    Get AI-powered crop suggestions based on soil type,
+                    weather conditions, season and location.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <div class="card-icon">🌦</div>
+
+                <h3>Weather Intelligence</h3>
+
+                <p>
+
+                    Access real-time temperature, humidity and rainfall
+                    information to plan farming activities efficiently.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <div class="card-icon">🍃</div>
+
+                <h3>Disease Detection</h3>
+
+                <p>
+
+                    Upload a plant leaf image and let AI identify diseases
+                    with confidence and treatment suggestions.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <div class="card-icon">🤖</div>
+
+                <h3>AI Farming Assistant</h3>
+
+                <p>
+
+                    Ask agriculture-related questions and receive instant
+                    intelligent guidance from our AI assistant.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <div class="card-icon">📊</div>
+
+                <h3>Smart Analytics</h3>
+
+                <p>
+
+                    Analyze farming conditions using machine learning
+                    for improved productivity and planning.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <div class="card-icon">⚡</div>
+
+                <h3>Fast Predictions</h3>
+
+                <p>
+
+                    Optimized AI models provide quick and reliable
+                    recommendations within seconds.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="about-section dark-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="section-tag">
+
+                WORKFLOW
+
+            </span>
+
+            <h2>
+
+                How AgroGuide AI Works
+
+            </h2>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-icon">
+                    📍
+                </div>
+
+                <div>
+
+                    <h3>Step 1</h3>
+
+                    <p>
+
+                        Enter your location and farming details or upload
+                        a plant image.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-icon">
+                    🌦
+                </div>
+
+                <div>
+
+                    <h3>Step 2</h3>
+
+                    <p>
+
+                        AgroGuide collects live weather information and
+                        analyzes environmental conditions.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-icon">
+                    🌱
+                </div>
+
+                <div>
+
+                    <h3>Step 3</h3>
+
+                    <p>
+
+                        Soil characteristics and seasonal information are
+                        processed using intelligent algorithms.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-icon">
+                    🤖
+                </div>
+
+                <div>
+
+                    <h3>Step 4</h3>
+
+                    <p>
+
+                        Machine Learning models generate the most suitable
+                        crop recommendations or disease predictions.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-icon">
+                    🌾
+                </div>
+
+                <div>
+
+                    <h3>Step 5</h3>
+
+                    <p>
+
+                        Farmers receive accurate, easy-to-understand
+                        recommendations for better decision-making.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="about-section dark-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="section-tag">
+                WHY US
+            </span>
+
+            <h2>
+
+                Why Choose
+
+                <span>AgroGuide AI</span>
+
+            </h2>
+
+            <p>
+
+                We combine Artificial Intelligence with Agriculture to
+                provide reliable, fast and user-friendly farming solutions.
+
+            </p>
+
+        </div>
+
+        <div class="cards-grid">
+
+            <div class="feature-card">
+                <div class="card-icon">🤖</div>
+                <h3>AI Powered</h3>
+                <p>Advanced Machine Learning models provide intelligent farming recommendations.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">⚡</div>
+                <h3>Fast Predictions</h3>
+                <p>Get crop and disease predictions within seconds.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">🌦</div>
+                <h3>Live Weather</h3>
+                <p>Real-time weather updates help farmers plan efficiently.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">🌱</div>
+                <h3>Soil Analysis</h3>
+                <p>Understand soil conditions for better crop selection.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">📱</div>
+                <h3>Easy to Use</h3>
+                <p>Simple interface designed for everyone.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">🌍</div>
+                <h3>Sustainable Farming</h3>
+                <p>Promotes efficient resource usage and environmentally friendly farming.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="stats-section">
+
+    <div class="container stats-grid">
+
+        <div class="stat-card">
+            <h2>95%</h2>
+            <p>Prediction Accuracy</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>50+</h2>
+            <p>Supported Crops</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>24×7</h2>
+            <p>Weather Monitoring</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>AI</h2>
+            <p>Powered Platform</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= DEVELOPER ================= -->
+
+<!-- ================= TEAM ================= -->
+
+<section class="about-section dark-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="section-tag">
+                OUR TEAM
+            </span>
+
+            <h2>
+
+                Meet the Team Behind
+                <span>AgroGuide AI</span>
+
+            </h2>
+
+            <p>
+                AgroGuide AI was developed through the collaborative efforts of a dedicated team,
+                combining expertise in web development, artificial intelligence, machine learning,
+                user interface design, testing, and documentation to deliver an innovative smart
+                agriculture solution.
+            </p>
+
+        </div>
+
+        <div class="team-grid">
+
+            <!-- Team Lead -->
+
+            <div class="developer-card">
+
+                <div class="developer-avatar">
+
+      <img src="{% static 'images/anshika_kumari.png' %}"
+         alt="Anshika Kumari">
+
+</div>
+
+                <h3>Anshika Kumari</h3>
+
+                <h4>Team Lead • Full Stack Developer</h4>
+
+                <p>
+                    Led the overall project development, designed the backend using Python and Django,
+                    integrated Machine Learning models, weather APIs, database management, and coordinated
+                    the complete project implementation and testing.
+                </p>
+
+            </div>
+
+            <!-- Member -->
+
+            <div class="developer-card">
+
+                <div class="developer-avatar">
+
+      <img src="{% static 'images/anushka_bharti.png' %}"
+         alt="Anushka Bharti">
+
+</div>
+
+                <h3>Anushka Bharti</h3>
+
+                <h4>Frontend Developer</h4>
+
+                <p>
+                    Designed responsive user interfaces, implemented frontend components using HTML,
+                    CSS, Tailwind CSS, and JavaScript, and enhanced the overall user experience.
+                </p>
+
+            </div>
+
+            <!-- Member -->
+
+            <div class="developer-card">
+
+                <div class="developer-avatar">👩‍💻</div>
+
+                <h3>Anvesha</h3>
+
+                <h4>Machine Learning & Data Support</h4>
+
+                <p>
+                    Assisted in agricultural dataset preparation, data preprocessing, AI model testing,
+                    prediction validation, and supported machine learning feature development.
+                </p>
+
+            </div>
+
+            <!-- Member -->
+
+            <div class="developer-card">
+
+                <div class="developer-avatar">👩‍💻</div>
+
+                <h3>Alka Diwedi</h3>
+
+                <h4>Testing & Documentation</h4>
+
+                <p>
+                    Performed application testing, verified system functionality, prepared project
+                    documentation, reports, presentations, and supported quality assurance activities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= FAQ ================= -->
+
+<section class="about-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="section-tag">
+
+                FAQ
+
+            </span>
+
+            <h2>
+
+                Frequently Asked Questions
+
+            </h2>
+
+        </div>
+
+        <div class="faq-container">
+
+            <div class="faq-item">
+                <h3>🌾 How does crop recommendation work?</h3>
+                <p>It uses weather, soil conditions and AI models to suggest suitable crops.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>🍃 Can AgroGuide detect plant diseases?</h3>
+                <p>Yes, by analyzing uploaded leaf images using AI models.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>🌦 Does it provide live weather updates?</h3>
+                <p>Yes, AgroGuide integrates weather APIs for real-time forecasts.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>🤖 Is AgroGuide free to use?</h3>
+                <p>The current academic version is available free for learning and demonstration purposes.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <h2>
+
+            Ready to Transform Agriculture with AI?
+
         </h2>
 
-        <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
-            Smart solutions designed to improve farming efficiency and crop productivity.
-        </p>
-    </div>
+        <p>
 
-    <div class="grid md:grid-cols-3 gap-8">
+            Join AgroGuide AI and experience the future of smart farming
+            through intelligent crop recommendations, weather insights,
+            and AI-powered agricultural solutions.
 
-        <div class="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition">
-            <h3 class="text-xl font-semibold mb-3">🌾 Smart Crop Selection</h3>
-            <p class="text-gray-400">
-                AI-based recommendations to select the best crops.
-            </p>
-        </div>
-
-        <div class="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition">
-            <h3 class="text-xl font-semibold mb-3">🌦 Weather Forecast</h3>
-            <p class="text-gray-400">
-                Stay updated with weather conditions in real time.
-            </p>
-        </div>
-
-        <div class="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition">
-            <h3 class="text-xl font-semibold mb-3">⚡ Fast Predictions</h3>
-            <p class="text-gray-400">
-                Quick and intelligent AI predictions for farmers.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- STATS -->
-<section class="bg-gray-900 text-white py-20">
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center px-10">
-
-        <div>
-            <h2 class="text-4xl font-bold text-green-400">95%</h2>
-            <p class="text-gray-400 mt-2">Prediction Accuracy</p>
-        </div>
-
-        <div>
-            <h2 class="text-4xl font-bold text-green-400">24/7</h2>
-            <p class="text-gray-400 mt-2">Weather Updates</p>
-        </div>
-
-        <div>
-            <h2 class="text-4xl font-bold text-green-400">100+</h2>
-            <p class="text-gray-400 mt-2">Crop Suggestions</p>
-        </div>
-
-        <div>
-            <h2 class="text-4xl font-bold text-green-400">AI</h2>
-            <p class="text-gray-400 mt-2">Smart Analysis</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- CTA SECTION -->
-<section class="relative text-center py-28 bg-gray-950 overflow-hidden">
-
-    <div class="absolute inset-0 bg-gradient-to-r 
-    from-green-500/10 via-transparent to-emerald-500/10">
-    </div>
-
-    <div class="relative z-10">
-
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-5">
-            Join the Smart Farming Revolution
-        </h2>
-
-        <p class="text-gray-400 max-w-2xl mx-auto mb-10 text-lg">
-            Start using AI-powered agriculture and transform the way farming works.
         </p>
 
-        <a href="{% url 'register' %}">
-            <button class="bg-green-500 hover:bg-green-600 
-            text-white px-10 py-4 rounded-2xl 
-            text-lg font-semibold shadow-2xl 
-            hover:scale-110 transition duration-300">
+        <a href="{% url 'register' %}" class="cta-btn">
 
-                🚀 Get Started
-            </button>
+            🚀 Get Started Today
+
         </a>
 
     </div>

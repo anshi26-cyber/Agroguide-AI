@@ -1,120 +1,739 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
 {% block content %}
 
-<!-- HERO -->
-<section class="relative overflow-hidden flex flex-col md:flex-row items-center justify-between px-10 py-24">
+<!-- ================= HERO SECTION ================= -->
 
-    <!-- Background Blur -->
-    <div class="absolute top-0 left-0 w-72 h-72 bg-green-200 opacity-20 blur-3xl rounded-full"></div>
-    <div class="absolute bottom-0 right-0 w-72 h-72 bg-green-300 opacity-20 blur-3xl rounded-full"></div>
+<section class="relative overflow-hidden min-h-[90vh] flex items-center">
 
-    <!-- Left Content -->
-    <div class="max-w-xl space-y-6 z-10">
-        <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">
-            🌱 AI Powered Agriculture
-        </span>
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-green-50 via-white to-green-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"></div>
 
-        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
-            Smart Farming with
-            <span class="text-green-500 drop-shadow-md">AI</span>
-        </h1>
+    <!-- Decorative Blobs -->
+    <div class="absolute -top-24 -left-20 w-96 h-96 bg-green-400/20 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-emerald-400/20 rounded-full blur-3xl"></div>
 
-        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-            AI-powered crop recommendations using soil analysis and 
-            real-time weather data.
-        </p>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-20">
 
-        <div class="flex flex-wrap gap-4 pt-2">
-            <a href="{% url 'prediction_options' %}">
-                <button class="bg-green-500 text-white px-8 py-3 rounded-xl shadow-lg hover:shadow-green-300 hover:scale-105 transition duration-300 btn-hover">
-                    🚀 Start Prediction
-                </button>
-            </a>
+        <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
 
-            <a href="{% url 'about' %}">
-                <button class="border border-gray-400 px-8 py-3 rounded-xl hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-300 shadow-sm">
-                    Explore
-                </button>
-            </a>
+            <!-- LEFT CONTENT -->
+            <div>
+
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-700 text-green-700 dark:text-green-300 text-sm font-semibold mb-8">
+                    🌱 AI Powered Agriculture
+                </div>
+
+                <!-- Heading -->
+                <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight">
+
+                    Smarter Farming
+
+                    <br>
+
+                    with
+
+                    <span class="text-green-500">
+                        Artificial Intelligence
+                    </span>
+
+                </h1>
+
+                <!-- Description -->
+                <p class="mt-8 text-lg text-gray-600 dark:text-gray-300 leading-8 max-w-xl">
+
+                    AgroGuide AI helps farmers make better decisions using
+                    AI-powered crop prediction, real-time weather analysis,
+                    soil intelligence and plant disease detection.
+
+                </p>
+
+                <!-- Buttons -->
+                <div class="flex flex-wrap gap-5 mt-10">
+
+                    <a href="{% url 'prediction_options' %}"
+                        class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-green-500 text-white font-semibold shadow-xl hover:bg-green-600 hover:scale-105 transition duration-300">
+
+                        🚀 Start Prediction
+
+                    </a>
+
+                    <a href="{% url 'about' %}"
+                        class="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-gray-300 dark:border-gray-700 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-300">
+
+                        Learn More →
+
+                    </a>
+
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-8 mt-14">
+
+                    <div>
+                        <h3 class="text-3xl font-bold text-green-500">95%</h3>
+                        <p class="text-gray-500 dark:text-gray-400">
+                            Prediction Accuracy
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-3xl font-bold text-green-500">24×7</h3>
+                        <p class="text-gray-500 dark:text-gray-400">
+                            AI Assistant
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-3xl font-bold text-green-500">50+</h3>
+                        <p class="text-gray-500 dark:text-gray-400">
+                            Supported Crops
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT CONTENT -->
+            <div class="flex flex-col items-center relative">
+
+                <!-- Glow -->
+                <div class="absolute w-96 h-96 rounded-full bg-green-400/30 blur-3xl"></div>
+
+                <!-- Image -->
+                <div class="hero-image-wrapper">
+
+                    <img
+                        src="{% static 'images/farmer.jpg' %}"
+                        alt="Smart Farming"
+                        loading="lazy"
+                        class="hero-img">
+
+                </div>
+
+                <!-- Cards Below Image -->
+                <div class="flex flex-wrap justify-center gap-6 mt-6">
+
+                    <!-- Crop Card -->
+                    <div class="glass bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-5 w-56">
+
+                        <div class="text-3xl">🌾</div>
+
+                        <h4 class="font-bold mt-2">
+                            Crop Prediction
+                        </h4>
+
+                        <p class="text-sm text-gray-500 dark:text-gray-400">
+                            AI Recommendation
+                        </p>
+
+                    </div>
+
+                    <!-- Weather Card -->
+                    <div class="glass bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-5 w-56">
+
+                        <div class="text-3xl">🌦️</div>
+
+                        <h4 class="font-bold mt-2">
+                            Live Weather
+                        </h4>
+
+                        <p class="text-sm text-gray-500 dark:text-gray-400">
+                            Real-time Forecast
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+
     </div>
 
-    <!-- Hero Image -->
-    <div class="relative z-10 mt-10 md:mt-0">
-        <div class="absolute inset-0 bg-gradient-to-r from-green-400/30 to-transparent rounded-3xl blur-2xl"></div>
+</section>
+<!-- ================= TRUSTED BY ================= -->
 
-        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef"
-            class="hero-img w-[550px] h-[380px] object-cover rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 hover:scale-105 transition duration-500">
+<section class="py-16 bg-white dark:bg-gray-950">
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+        <div class="text-center mb-12">
+
+            <span class="text-green-500 font-semibold uppercase tracking-widest">
+                Trusted Technology
+            </span>
+
+            <h2 class="text-4xl font-bold mt-3">
+                Helping Farmers Make Better Decisions
+            </h2>
+
+            <p class="text-gray-500 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
+                AgroGuide AI combines Artificial Intelligence, Weather Forecasting,
+                Soil Analysis and Disease Detection to improve crop productivity.
+            </p>
+
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+            <div class="glass text-center p-8">
+                <div class="text-5xl mb-4">👨‍🌾</div>
+                <h3 class="text-4xl font-bold text-green-500">5000+</h3>
+                <p class="mt-2 text-gray-500 dark:text-gray-400">
+                    Farmers Supported
+                </p>
+            </div>
+
+            <div class="glass text-center p-8">
+                <div class="text-5xl mb-4">🎯</div>
+                <h3 class="text-4xl font-bold text-green-500">95%</h3>
+                <p class="mt-2 text-gray-500 dark:text-gray-400">
+                    Prediction Accuracy
+                </p>
+            </div>
+
+            <div class="glass text-center p-8">
+                <div class="text-5xl mb-4">🌾</div>
+                <h3 class="text-4xl font-bold text-green-500">50+</h3>
+                <p class="mt-2 text-gray-500 dark:text-gray-400">
+                    Crop Recommendations
+                </p>
+            </div>
+
+            <div class="glass text-center p-8">
+                <div class="text-5xl mb-4">🌦️</div>
+                <h3 class="text-4xl font-bold text-green-500">24×7</h3>
+                <p class="mt-2 text-gray-500 dark:text-gray-400">
+                    Weather Monitoring
+                </p>
+            </div>
+
+        </div>
+
     </div>
 
 </section>
 
-<!-- FEATURES -->
-<section id="features" class="px-10 py-20 bg-gradient-to-b from-transparent to-green-50 dark:to-gray-900">
 
-    <div class="text-center mb-14">
-        <h2 class="text-4xl font-bold">
-            Why <span class="text-green-500">AgroGuide?</span>
-        </h2>
-        <p class="text-gray-500 dark:text-gray-400 mt-3">
-            Powerful AI features to make farming smarter and more productive.
-        </p>
+<!-- ================= FEATURES ================= -->
+
+<section class="py-24 bg-gradient-to-b from-green-50 to-white dark:from-gray-900 dark:to-gray-950">
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+        <div class="text-center mb-16">
+
+            <span class="text-green-500 font-semibold uppercase tracking-widest">
+                Our Features
+            </span>
+
+            <h2 class="text-5xl font-bold mt-3">
+                Everything You Need for Smart Farming
+            </h2>
+
+            <p class="text-gray-500 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
+                AI-powered tools designed to improve productivity, reduce risk,
+                and help farmers make data-driven decisions.
+            </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- Card 1 -->
+
+            <div class="glass rounded-3xl p-8 hover:-translate-y-3 transition duration-300">
+
+                <div class="text-5xl mb-6">🌱</div>
+
+                <h3 class="text-2xl font-bold mb-3">
+                    Crop Prediction
+                </h3>
+
+                <p class="text-gray-600 dark:text-gray-300 leading-7">
+                    Get the most suitable crop recommendations using soil,
+                    weather and seasonal data.
+                </p>
+
+            </div>
+
+            <!-- Card 2 -->
+
+            <div class="glass rounded-3xl p-8 hover:-translate-y-3 transition duration-300">
+
+                <div class="text-5xl mb-6">🌦️</div>
+
+                <h3 class="text-2xl font-bold mb-3">
+                    Weather Forecast
+                </h3>
+
+                <p class="text-gray-600 dark:text-gray-300 leading-7">
+                    Receive live weather updates to plan irrigation,
+                    harvesting and sowing effectively.
+                </p>
+
+            </div>
+
+            <!-- Card 3 -->
+
+            <div class="glass rounded-3xl p-8 hover:-translate-y-3 transition duration-300">
+
+                <div class="text-5xl mb-6">🍃</div>
+
+                <h3 class="text-2xl font-bold mb-3">
+                    Disease Detection
+                </h3>
+
+                <p class="text-gray-600 dark:text-gray-300 leading-7">
+                    Upload a leaf image and let AI detect diseases instantly
+                    with confidence scores.
+                </p>
+
+            </div>
+
+            <!-- Card 4 -->
+
+            <div class="glass rounded-3xl p-8 hover:-translate-y-3 transition duration-300">
+
+                <div class="text-5xl mb-6">🤖</div>
+
+                <h3 class="text-2xl font-bold mb-3">
+                    AI Assistant
+                </h3>
+
+                <p class="text-gray-600 dark:text-gray-300 leading-7">
+                    Ask farming-related questions anytime and receive
+                    intelligent AI guidance instantly.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
+</section>
+<!-- ================= HOW IT WORKS ================= -->
 
-        <!-- Card 1 -->
-        <div class="glass p-8 rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700 hover:-translate-y-2 hover:shadow-2xl transition duration-300">
-            <div class="text-5xl mb-4">🌱</div>
-            <h3 class="text-2xl font-semibold mb-3">Crop Intelligence</h3>
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                Get smart crop suggestions based on soil & weather.
+<section class="py-24 bg-white dark:bg-gray-950">
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+        <div class="text-center mb-16">
+
+            <span class="text-green-500 font-semibold uppercase tracking-widest">
+                Simple Process
+            </span>
+
+            <h2 class="text-5xl font-bold mt-3">
+                How AgroGuide AI Works
+            </h2>
+
+            <p class="text-gray-500 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
+                Just four simple steps to get AI-powered farming recommendations.
             </p>
+
         </div>
 
-        <!-- Card 2 -->
-        <div class="glass p-8 rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700 hover:-translate-y-2 hover:shadow-2xl transition duration-300">
-            <div class="text-5xl mb-4">🌦️</div>
-            <h3 class="text-2xl font-semibold mb-3">Weather Insights</h3>
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                Stay updated with real-time weather information.
-            </p>
-        </div>
+        <div class="grid md:grid-cols-4 gap-8">
 
-        <!-- Card 3 -->
-        <div class="glass p-8 rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700 hover:-translate-y-2 hover:shadow-2xl transition duration-300">
-            <div class="text-5xl mb-4">🤖</div>
-            <h3 class="text-2xl font-semibold mb-3">AI Engine</h3>
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                ML-powered predictions for better farming decisions.
-            </p>
+            <div class="text-center">
+                <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-green-500 text-white text-3xl shadow-xl">
+                    📷
+                </div>
+                <h3 class="mt-6 text-2xl font-bold">1. Upload</h3>
+                <p class="mt-3 text-gray-500 dark:text-gray-400">
+                    Upload your soil or crop image.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-green-500 text-white text-3xl shadow-xl">
+                    🌦️
+                </div>
+                <h3 class="mt-6 text-2xl font-bold">2. Analyze</h3>
+                <p class="mt-3 text-gray-500 dark:text-gray-400">
+                    Weather and soil conditions are analyzed.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-green-500 text-white text-3xl shadow-xl">
+                    🤖
+                </div>
+                <h3 class="mt-6 text-2xl font-bold">3. AI Prediction</h3>
+                <p class="mt-3 text-gray-500 dark:text-gray-400">
+                    Machine learning predicts the best outcome.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-green-500 text-white text-3xl shadow-xl">
+                    🌾
+                </div>
+                <h3 class="mt-6 text-2xl font-bold">4. Grow</h3>
+                <p class="mt-3 text-gray-500 dark:text-gray-400">
+                    Follow recommendations for better productivity.
+                </p>
+            </div>
+
         </div>
 
     </div>
+
 </section>
 
-<!-- CTA -->
-<section class="relative text-center py-24 overflow-hidden">
+<!-- ================= STATISTICS ================= -->
 
-    <!-- Background Glow -->
-    <div class="absolute inset-0 bg-gradient-to-r from-green-100 via-transparent to-green-100 dark:from-gray-800 dark:to-gray-800 opacity-50"></div>
+<section class="py-24 bg-gradient-to-r from-green-600 to-emerald-600 text-white">
 
-    <div class="relative z-10">
-        <h2 class="text-4xl font-bold mb-5">
-            Start Your Smart Farming Journey
-        </h2>
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
-        <p class="text-gray-500 dark:text-gray-400 mb-8 max-w-xl mx-auto">
-            Join the future of agriculture with AI-driven crop recommendations and weather insights.
-        </p>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
 
-        <a href="{% url 'prediction_options' %}">
-            <button class="bg-green-500 text-white px-10 py-4 rounded-2xl text-lg font-semibold shadow-xl hover:scale-110 hover:shadow-green-300 transition duration-300 btn-hover">
-                🌾 Get Started
-            </button>
-        </a>
+            <div class="relative z-20">
+                <h2 class="text-5xl font-extrabold">50K+</h2>
+                <p class="mt-3 text-green-100">
+                    Predictions Generated
+                </p>
+            </div>
+
+            <div class="relative z-20">
+                <h2 class="text-5xl font-extrabold">98%</h2>
+                <p class="mt-3 text-green-100">
+                    User Satisfaction
+                </p>
+            </div>
+
+            <div class="relative z-20">
+                <h2 class="text-5xl font-extrabold">20+</h2>
+                <p class="mt-3 text-green-100">
+                    Indian States
+                </p>
+            </div>
+
+            <div class="relative z-20">
+                <h2 class="text-5xl font-extrabold">24×7</h2>
+                <p class="mt-3 text-green-100">
+                    AI Support
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= WEATHER PREVIEW ================= -->
+
+<section class="py-24 bg-gray-50 dark:bg-gray-900">
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+            <div>
+
+                <span class="text-green-500 font-semibold uppercase tracking-widest">
+                    Live Weather
+                </span>
+
+                <h2 class="text-5xl font-bold mt-4">
+                    Weather Intelligence for Better Farming
+                </h2>
+
+                <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 leading-8">
+                    Access temperature, humidity, rainfall, and weather forecasts
+                    to make smarter farming decisions every day.
+                </p>
+
+                <a href="{% url 'prediction_options' %}"
+                   class="inline-block mt-8 bg-green-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-600 transition">
+
+                    Check Weather →
+
+                </a>
+
+            </div>
+
+            <div class="glass rounded-3xl p-8 shadow-2xl">
+
+                <div class="flex justify-between items-center mb-8">
+
+                    <div>
+                        <h3 class="text-3xl font-bold">🌦️ Bhopal</h3>
+                        <p class="text-gray-500 dark:text-gray-400">
+                            Live Weather Preview
+                        </p>
+                    </div>
+
+                    <div class="text-6xl">
+                        ☀️
+                    </div>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-6">
+
+                    <div class="bg-green-100 dark:bg-gray-800 rounded-2xl p-5 text-center">
+                        <h4 class="text-xl font-bold">32°C</h4>
+                        <p class="text-gray-500">Temperature</p>
+                    </div>
+
+                    <div class="bg-green-100 dark:bg-gray-800 rounded-2xl p-5 text-center">
+                        <h4 class="text-xl font-bold">70%</h4>
+                        <p class="text-gray-500">Humidity</p>
+                    </div>
+
+                    <div class="bg-green-100 dark:bg-gray-800 rounded-2xl p-5 text-center">
+                        <h4 class="text-xl font-bold">5 km/h</h4>
+                        <p class="text-gray-500">Wind</p>
+                    </div>
+
+                    <div class="bg-green-100 dark:bg-gray-800 rounded-2xl p-5 text-center">
+                        <h4 class="text-xl font-bold">Clear</h4>
+                        <p class="text-gray-500">Condition</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="py-24 bg-white dark:bg-gray-950">
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+        <div class="text-center mb-16">
+
+            <span class="text-green-500 font-semibold uppercase tracking-widest">
+                Testimonials
+            </span>
+
+            <h2 class="text-5xl font-bold mt-3">
+                What Farmers Say
+            </h2>
+
+            <p class="mt-4 text-gray-500 dark:text-gray-400">
+                Trusted by farmers for smarter and more productive agriculture.
+            </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <div class="glass p-8 rounded-3xl">
+
+                <div class="text-yellow-400 text-xl mb-4">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-300 italic leading-8">
+
+                    "AgroGuide AI helped me choose the right crop for my soil.
+                    My productivity improved significantly."
+
+                </p>
+
+                <div class="mt-6">
+
+                    <h4 class="font-bold">
+                        Ramesh Patel
+                    </h4>
+
+                    <p class="text-sm text-gray-500">
+                        Farmer • Madhya Pradesh
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="glass p-8 rounded-3xl">
+
+                <div class="text-yellow-400 text-xl mb-4">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-300 italic leading-8">
+
+                    "Disease detection saved my crop before it spread.
+                    Very useful application."
+
+                </p>
+
+                <div class="mt-6">
+
+                    <h4 class="font-bold">
+                        Sunita Devi
+                    </h4>
+
+                    <p class="text-sm text-gray-500">
+                        Farmer • Bihar
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="glass p-8 rounded-3xl">
+
+                <div class="text-yellow-400 text-xl mb-4">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-300 italic leading-8">
+
+                    "Weather predictions are accurate and easy to understand.
+                    Highly recommended."
+
+                </p>
+
+                <div class="mt-6">
+
+                    <h4 class="font-bold">
+                        Mohan Singh
+                    </h4>
+
+                    <p class="text-sm text-gray-500">
+                        Farmer • Rajasthan
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FAQ ================= -->
+
+<section class="py-24 bg-gray-50 dark:bg-gray-900">
+
+    <div class="max-w-5xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+
+            <span class="text-green-500 uppercase font-semibold">
+                FAQ
+            </span>
+
+            <h2 class="text-5xl font-bold mt-3">
+                Frequently Asked Questions
+            </h2>
+
+        </div>
+
+        <div class="space-y-6">
+
+            <div class="glass p-6 rounded-2xl">
+
+                <h3 class="font-bold text-xl mb-2">
+
+                    🌱 How does crop prediction work?
+
+                </h3>
+
+                <p class="text-gray-600 dark:text-gray-300">
+
+                    AI analyzes soil type, weather conditions and season to
+                    recommend the best crops.
+
+                </p>
+
+            </div>
+
+            <div class="glass p-6 rounded-2xl">
+
+                <h3 class="font-bold text-xl mb-2">
+
+                    🍃 Can it detect plant diseases?
+
+                </h3>
+
+                <p class="text-gray-600 dark:text-gray-300">
+
+                    Yes. Upload a leaf image and our AI model predicts the
+                    disease with confidence.
+
+                </p>
+
+            </div>
+
+            <div class="glass p-6 rounded-2xl">
+
+                <h3 class="font-bold text-xl mb-2">
+
+                    🌦️ Does it use live weather?
+
+                </h3>
+
+                <p class="text-gray-600 dark:text-gray-300">
+
+                    Yes. Weather data is fetched in real time to improve
+                    prediction accuracy.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="py-24">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="rounded-[40px] bg-gradient-to-r from-green-500 to-emerald-600 text-white p-16 text-center shadow-2xl">
+
+            <h2 class="text-5xl font-extrabold">
+
+                Ready to Transform Farming?
+
+            </h2>
+
+            <p class="mt-6 text-xl text-green-100 max-w-3xl mx-auto">
+
+                Experience AI-powered agriculture with crop prediction,
+                disease detection and weather intelligence.
+
+            </p>
+
+            <a href="{% url 'prediction_options' %}"
+               class="inline-block mt-10 px-10 py-4 bg-white text-green-600 rounded-2xl font-bold hover:scale-105 transition">
+
+                🚀 Start Now
+
+            </a>
+
+        </div>
+
     </div>
 
 </section>
